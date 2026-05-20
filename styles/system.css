@@ -1,0 +1,24 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading), sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .section-space {
+    @apply py-14 sm:py-16 lg:py-20;
+  }
+}
