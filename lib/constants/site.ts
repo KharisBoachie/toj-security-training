@@ -6,7 +6,9 @@ export const siteConfig = {
   contact: {
     email: "info@tojsecuritytraining.co.uk",
     phonePrimary: "+44 20 0000 0000",
+    phonePrimaryHref: "+442000000000",
     phoneSecondary: "+44 74 0000 0000",
+    phoneSecondaryHref: "+447400000000",
     address: "London, United Kingdom",
   },
 } as const;

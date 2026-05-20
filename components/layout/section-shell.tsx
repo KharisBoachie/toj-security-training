@@ -8,7 +8,7 @@ type SectionShellProps = ComponentPropsWithoutRef<"section"> & {
 export function SectionShell({ className, ...props }: SectionShellProps) {
   return (
     <section
-      className={cn("section-space scroll-mt-24", className)}
+      className={cn("section-space scroll-mt-28", className)}
       {...props}
     />
   );

@@ -1,41 +1,40 @@
-import { Container } from "@/components/layout/container";
-import { SectionShell } from "@/components/layout/section-shell";
+import { ContentBand } from "@/components/primitives/content-band";
+import { PageContainer } from "@/components/primitives/page-container";
+import { SectionContainer } from "@/components/primitives/section-container";
+import { SectionHeading } from "@/components/primitives/section-heading";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { valueProps } from "@/lib/data/home";
 
 export function WhyChooseUsSection() {
   return (
-    <SectionShell>
-      <Container className="space-y-10">
-        <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-            Why students choose us
-          </p>
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Structured learning with the standards expected by serious
-            employers.
-          </h2>
-        </div>
+    <SectionContainer>
+      <PageContainer className="section-rhythm">
+        <SectionHeading
+          eyebrow="Why students choose us"
+          title="Structured learning with the standards expected by serious employers."
+        />
 
         <div className="grid gap-5 md:grid-cols-3">
           {valueProps.map((item) => (
-            <Card
+            <ContentBand
               key={item.title}
-              className="border-border/80 bg-card transition duration-300 hover:shadow-md"
+              className="hover:-translate-y-1 hover:border-primary/30"
             >
-              <CardHeader className="space-y-3">
-                <item.icon className="size-5 text-primary" />
-                <CardTitle className="text-lg">{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="border-none bg-transparent p-0 shadow-none ring-0">
+                <CardHeader className="space-y-3 pb-4">
+                  <item.icon className="size-5 text-primary" />
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="copy-rhythm text-sm text-muted-foreground">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </ContentBand>
           ))}
         </div>
-      </Container>
-    </SectionShell>
+      </PageContainer>
+    </SectionContainer>
   );
 }

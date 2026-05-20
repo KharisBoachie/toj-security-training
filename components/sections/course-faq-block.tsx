@@ -1,28 +1,29 @@
 "use client";
 
-import { Container } from "@/components/layout/container";
 import { ContentBand } from "@/components/primitives/content-band";
+import { PageContainer } from "@/components/primitives/page-container";
 import { SectionContainer } from "@/components/primitives/section-container";
-import { SectionHeading } from "@/components/primitives/section-heading";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqs } from "@/lib/data/home";
+import { type CourseFaq } from "@/lib/data/courses";
 
-export function FaqSection() {
+type CourseFaqBlockProps = {
+  faqs: CourseFaq[];
+};
+
+export function CourseFaqBlock({ faqs }: CourseFaqBlockProps) {
   return (
-    <SectionContainer id="faq">
-      <Container className="section-rhythm">
-        <SectionHeading
-          eyebrow="Frequently asked questions"
-          title="Clear answers for learners and employer teams."
-        />
-
-        <ContentBand className="p-5 sm:p-7">
-          <Accordion defaultValue={["item-0"]}>
+    <SectionContainer className="pt-0">
+      <PageContainer>
+        <ContentBand className="p-6 sm:p-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+            Frequently asked questions
+          </h2>
+          <Accordion className="mt-5" defaultValue={["item-0"]}>
             {faqs.map((faq, index) => (
               <AccordionItem key={faq.question} value={`item-${index}`}>
                 <AccordionTrigger className="text-base font-medium">
@@ -35,7 +36,7 @@ export function FaqSection() {
             ))}
           </Accordion>
         </ContentBand>
-      </Container>
+      </PageContainer>
     </SectionContainer>
   );
 }

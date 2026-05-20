@@ -1,62 +1,71 @@
-import { Award, Shield, UserRoundCheck } from "lucide-react";
+import { PageContainer } from "@/components/primitives/page-container";
+import { SectionContainer } from "@/components/primitives/section-container";
+import { BriefcaseBusiness, ShieldCheck, UserCheck, Workflow } from "lucide-react";
 
-import { Container } from "@/components/layout/container";
-import { SectionShell } from "@/components/layout/section-shell";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const trustCards = [
+const trustHighlights = [
   {
-    title: "Compliance-Led Delivery",
-    description:
-      "Programmes are structured around current professional requirements and practical industry expectations.",
-    icon: Shield,
+    title: "Industry Recognised",
+    description: "Training aligned with SIA standards and UK compliance requirements.",
+    icon: ShieldCheck,
   },
   {
-    title: "Qualified Instructors",
+    title: "Expert Instructors",
     description:
-      "Learners are guided by trainers with real operational and teaching experience in relevant sectors.",
-    icon: UserRoundCheck,
+      "Learn from professionals with real industry and operational experience.",
+    icon: UserCheck,
   },
   {
-    title: "Recognised Pathways",
+    title: "Practical & Relevant",
     description:
-      "Course pathways are designed to support licence progress, workplace readiness, and continued development.",
-    icon: Award,
+      "Real-world training designed to build confidence and workplace capability.",
+    icon: Workflow,
+  },
+  {
+    title: "Career Progression",
+    description: "Pathways that support your growth from license to leadership.",
+    icon: BriefcaseBusiness,
   },
 ] as const;
 
 export function TrustSection() {
   return (
-    <SectionShell>
-      <Container className="space-y-10">
-        <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
-            Why organisations and learners choose TOJ
-          </p>
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            Training that prioritises trust, standards, and practical outcomes.
-          </h2>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-3">
-          {trustCards.map((card) => (
-            <Card
-              key={card.title}
-              className="border-border/80 bg-card transition-transform duration-300 hover:-translate-y-1"
+    <SectionContainer className="relative overflow-hidden bg-ink py-9 sm:py-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(to_bottom,hsl(var(--ink)/0.06)_0%,hsl(var(--ink)/0.42)_56%,transparent_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-[-12%] top-[-4.75rem] h-36 bg-[radial-gradient(ellipse_at_center,hsl(var(--brand-blue)/0.14)_0%,hsl(var(--brand-blue)/0.08)_42%,transparent_74%)] blur-2xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent"
+      />
+      <PageContainer className="relative z-10">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          {trustHighlights.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-[1.1rem] border border-white/10 bg-white/[0.03] p-4 shadow-[0_22px_58px_-48px_hsl(var(--brand-blue)/0.45)]"
             >
-              <CardHeader>
-                <card.icon className="size-5 text-primary" />
-                <CardTitle className="text-lg">{card.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm leading-6 text-muted-foreground">
-                  {card.description}
-                </p>
-              </CardContent>
-            </Card>
+              <div className="flex items-start gap-3">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/12 bg-white/[0.03]">
+                  <item.icon className="size-5 text-brand-blue" />
+                </span>
+                <div className="space-y-1.5">
+                  <h3 className="text-base font-semibold tracking-tight text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-6 text-white/66">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
-      </Container>
-    </SectionShell>
+      </PageContainer>
+    </SectionContainer>
   );
 }

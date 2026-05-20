@@ -1,57 +1,141 @@
 import {
   BookOpenCheck,
+  BriefcaseBusiness,
   Camera,
   GraduationCap,
-  HeartPulse,
+  Languages,
+  Shield,
   ShieldCheck,
   ShieldPlus,
-  TrafficCone,
+  Stethoscope,
   UserCheck,
 } from "lucide-react";
 
 export const trustIndicators = [
-  "SIA-focused training pathways",
-  "Experienced, industry-active tutors",
-  "Small cohort and employer-friendly options",
-  "Clear progression from entry to top-up",
+  "Practical training aligned to security licensing expectations",
+  "English preparation pathways at A1, A2, and B1 levels",
+  "Professional short courses for workplace safety and compliance",
 ] as const;
 
-export const courseCategories = [
+export const trustBandCards = [
   {
-    title: "Door Supervisor",
+    title: "Compliance-led delivery",
     description:
-      "Core SIA pathway covering conflict management, physical intervention, and practical site readiness.",
+      "Training content is aligned to professional standards and practical role expectations.",
     icon: ShieldCheck,
   },
   {
-    title: "CCTV Training",
+    title: "Practical instructor guidance",
     description:
-      "Professional surveillance operations, legal compliance, incident reporting, and control room communication.",
-    icon: Camera,
+      "Learners receive clear support from instructors focused on real-world application, not theory-only delivery.",
+    icon: UserCheck,
   },
   {
-    title: "Security Top-Up",
+    title: "Clear learning pathways",
     description:
-      "Updated requirements for existing licence holders, including refreshed safety and intervention standards.",
-    icon: ShieldPlus,
-  },
-  {
-    title: "English Courses",
-    description:
-      "A1, A2, and B1 preparation designed to strengthen workplace communication and confidence.",
-    icon: GraduationCap,
-  },
-  {
-    title: "First Aid",
-    description:
-      "Workplace-first aid fundamentals with practical response techniques and compliant certification support.",
-    icon: HeartPulse,
-  },
-  {
-    title: "Short Courses",
-    description:
-      "Targeted modules including safeguarding, fire safety, traffic marshal, manual handling, and more.",
+      "From entry-level security routes to top-up and workplace modules, progression stays structured and understandable.",
     icon: BookOpenCheck,
+  },
+] as const;
+
+export const pathwayGroups = [
+  {
+    title: "Security Licensing",
+    description:
+      "Professional routes for learners preparing for licensed security responsibilities.",
+    href: "/courses",
+    icon: Shield,
+    items: [
+      "Door Supervisor",
+      "CCTV Training",
+      "Security Top-Up",
+    ],
+  },
+  {
+    title: "English Preparation",
+    description:
+      "Structured language support for communication, confidence, and progression goals.",
+    href: "/courses/english-a1-a2-b1",
+    icon: Languages,
+    items: [
+      "A1 English Preparation",
+      "A2 English Preparation",
+      "B1 English Preparation",
+    ],
+  },
+  {
+    title: "Workplace Short Courses",
+    description:
+      "Targeted modules for workplace safety, compliance awareness, and practical readiness.",
+    href: "/courses/short-courses",
+    icon: BriefcaseBusiness,
+    items: [
+      "First Aid",
+      "Safeguarding",
+      "Traffic Marshal",
+      "Manual Handling",
+      "Health & Safety",
+      "Fire Safety",
+      "Care Certificate",
+    ],
+  },
+] as const;
+
+export const aboutCredibilityRows = [
+  {
+    title: "Structured training pathways",
+    description:
+      "Clear routes from foundational learning to advanced role readiness.",
+  },
+  {
+    title: "Practical learner support",
+    description:
+      "Guidance focused on confidence, application, and measurable progression.",
+  },
+  {
+    title: "Suitable for individuals and employer teams",
+    description:
+      "Delivery formats support both single learners and workforce upskilling plans.",
+  },
+] as const;
+
+export const featuredCourseGroups = [
+  {
+    title: "Main Security Courses",
+    description:
+      "Core pathways for learners starting or renewing their security career route.",
+    icon: ShieldCheck,
+    courses: [
+      { label: "Door Supervisor", href: "/courses/door-supervisor" },
+      { label: "CCTV Training", href: "/courses/cctv" },
+      { label: "Security Top-Up", href: "/courses/security-top-up" },
+    ],
+  },
+  {
+    title: "Language Preparation",
+    description:
+      "English support designed to improve communication for training and workplace settings.",
+    icon: GraduationCap,
+    courses: [
+      { label: "A1 English Preparation", href: "/courses/english-a1-a2-b1" },
+      { label: "A2 English Preparation", href: "/courses/english-a1-a2-b1" },
+      { label: "B1 English Preparation", href: "/courses/english-a1-a2-b1" },
+    ],
+  },
+  {
+    title: "Professional Short Courses",
+    description:
+      "Focused training modules that strengthen workplace readiness and regulatory awareness.",
+    icon: BriefcaseBusiness,
+    courses: [
+      { label: "First Aid", href: "/courses/first-aid" },
+      { label: "Safeguarding", href: "/courses/short-courses" },
+      { label: "Traffic Marshal", href: "/courses/short-courses" },
+      { label: "Manual Handling", href: "/courses/short-courses" },
+      { label: "Health & Safety", href: "/courses/short-courses" },
+      { label: "Fire Safety", href: "/courses/short-courses" },
+      { label: "Care Certificate", href: "/courses/short-courses" },
+    ],
   },
 ] as const;
 
@@ -72,7 +156,31 @@ export const valueProps = [
     title: "Flexible Delivery",
     description:
       "Weekday and selected weekend schedules help learners and employers complete training with minimal disruption.",
-    icon: TrafficCone,
+    icon: Stethoscope,
+  },
+] as const;
+
+export const securityCourseHighlights = [
+  {
+    title: "Door Supervisor",
+    description:
+      "Comprehensive preparation for front-line security roles, including conflict handling and safe intervention practice.",
+    icon: ShieldCheck,
+    href: "/courses/door-supervisor",
+  },
+  {
+    title: "CCTV Training",
+    description:
+      "Operational and legal fundamentals for effective surveillance practice and professional reporting.",
+    icon: Camera,
+    href: "/courses/cctv",
+  },
+  {
+    title: "Security Top-Up",
+    description:
+      "Updated learning route for existing licence holders to meet current professional standards.",
+    icon: ShieldPlus,
+    href: "/courses/security-top-up",
   },
 ] as const;
 

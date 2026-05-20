@@ -12,13 +12,115 @@
   h2,
   h3,
   h4 {
-    font-family: var(--font-heading), sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-sans), sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 600;
   }
 }
 
 @layer utilities {
-  .section-space {
-    @apply py-14 sm:py-16 lg:py-20;
+  .max-w-site {
+    width: 100%;
+    max-width: 86rem;
+    margin-inline: auto;
   }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .display-title {
+    font-size: clamp(2.25rem, 1.2rem + 3.7vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .section-rhythm {
+    @apply space-y-7;
+  }
+
+  .copy-rhythm {
+    @apply leading-7;
+  }
+
+  .duration-premium {
+    transition-duration: var(--duration-premium);
+  }
+
+  .ease-premium {
+    transition-timing-function: var(--ease-premium);
+  }
+
+  .text-eyebrow {
+    @apply text-[0.72rem] font-semibold tracking-[0.2em] uppercase;
+  }
+
+  .text-body-sm {
+    @apply text-sm leading-7;
+  }
+
+  .text-body {
+    @apply text-base leading-7;
+  }
+
+  .text-lead {
+    @apply text-[1.05rem] leading-7;
+  }
+
+  .text-heading-sm {
+    @apply text-[1.4rem] leading-[1.08] tracking-[-0.035em] font-semibold;
+  }
+
+  .text-heading-md {
+    @apply text-3xl sm:text-4xl leading-[0.98] tracking-[-0.05em] font-semibold;
+  }
+
+  .text-heading-lg {
+    @apply text-4xl sm:text-5xl leading-[0.94] tracking-[-0.065em] font-semibold;
+  }
+
+  .text-display-sm {
+    font-size: clamp(3.4rem, 6.8vw, 7.2rem);
+    line-height: 0.92;
+    letter-spacing: -0.07em;
+    font-weight: 600;
+  }
+
+  .premium-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--brand-blue) / 0.34) transparent;
+  }
+
+  .premium-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .premium-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .premium-scrollbar::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--brand-blue) / 0.22),
+      hsl(var(--brand-blue-deep) / 0.28)
+    );
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    transition: background 220ms ease;
+  }
+
+  .premium-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--brand-blue) / 0.36),
+      hsl(var(--brand-blue-deep) / 0.46)
+    );
+  }
+
+  .modal-scroll-area {
+    scroll-behavior: smooth;
+  }
+
 }
