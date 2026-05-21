@@ -51,11 +51,11 @@ export function Footer() {
             <div className="inline-flex items-center gap-3">
               <span className="relative size-[50px] overflow-hidden">
                 <Image
-                  src="/images/toj-official-logo.png"
+                  src="/TOJ.png"
                   alt="TOJ Security Training logo"
                   fill
                   sizes="50px"
-                  className="object-contain mix-blend-screen drop-shadow-[0_6px_18px_rgba(0,0,0,0.45)]"
+                  className="object-contain"
                 />
               </span>
               <h3 className="text-heading-sm font-bold text-white">

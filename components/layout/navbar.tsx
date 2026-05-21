@@ -20,11 +20,11 @@ function BrandMark() {
     <Link href="/" className="flex items-center">
       <span className="relative flex h-10 w-10 items-center justify-center lg:h-[58px] lg:w-[58px]">
         <Image
-          src="/images/toj-logo.png"
+          src="/TOJ.png"
           alt="TOJ Security Training"
           width={58}
           height={58}
-          className="h-10 w-10 object-contain drop-shadow-[0_8px_22px_rgba(0,0,0,0.5)] lg:h-[58px] lg:w-[58px]"
+          className="h-10 w-10 object-contain lg:h-[58px] lg:w-[58px]"
           priority
         />
       </span>
@@ -191,12 +191,12 @@ export function Navbar() {
                 <Link href="/" className="inline-flex items-center gap-3">
                   <span className="relative flex h-10 w-10 items-center justify-center">
                     <Image
-                      src="/images/toj-logo.png"
+                      src="/TOJ.png"
                       alt="TOJ Security Training"
                       width={40}
                       height={40}
                       sizes="40px"
-                      className="h-10 w-10 object-contain drop-shadow-[0_8px_22px_rgba(0,0,0,0.5)]"
+                      className="h-10 w-10 object-contain"
                     />
                   </span>
                   <span className="text-sm font-semibold tracking-tight text-white/88">

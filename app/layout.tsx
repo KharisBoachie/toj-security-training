@@ -38,9 +38,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    icon: "/images/toj-official-logo.png",
-    shortcut: "/images/toj-official-logo.png",
-    apple: "/images/toj-official-logo.png",
+    icon: "/TOJ.png",
+    shortcut: "/TOJ.png",
+    apple: "/TOJ.png",
   },
 };
 
